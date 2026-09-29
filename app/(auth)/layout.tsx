@@ -24,7 +24,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
           <Logo textClassName="hidden" />
         </div>
 
-        <div className="w-full flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between gap-6 lg:gap-14 xl:gap-20 my-auto py-2 sm:py-4">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-14 xl:gap-20 my-auto py-2 sm:py-4">
           {/* left column */}
           <div className="w-full lg:max-w-120 xl:max-w-125 flex flex-col items-center lg:items-start text-center lg:text-left">
             <AuthHeader />
