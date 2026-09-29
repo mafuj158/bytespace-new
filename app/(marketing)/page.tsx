@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
+import Hero from "./_components/home/hero";
 
 export const metadata: Metadata = {
   title: "Home | Bytespace",
@@ -7,7 +8,13 @@ export const metadata: Metadata = {
 };
 
 const Home = () => {
-  return <div className="font-satoshi font-bold">Home</div>;
+  return (
+    <>
+      {/* hero */}
+      <Hero />
+    </>
+
+  )
 };
 
 export default Home;
