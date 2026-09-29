@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import CommonFieldset from "@/components/ui/fieldset";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { FaFacebook, FaGoogle } from "react-icons/fa";
+import SocialAuth from "../../_components/social-auth";
 
 type TLoginFormInputs = {
     email: string;
@@ -37,7 +37,7 @@ const LoginForm = () => {
     };
 
     return (
-        <form className="flex flex-col gap-5 mt-8" onSubmit={handleSubmit(onSubmit)}>
+        <form className="flex flex-col gap-3.5 sm:gap-4.5 mt-4 sm:mt-6" onSubmit={handleSubmit(onSubmit)}>
             {/* Email */}
             <CommonFieldset
                 control={control}
@@ -72,42 +72,20 @@ const LoginForm = () => {
             />
 
             {/* Submit Button */}
-            <div className="flex justify-end pt-2">
+            <div className="flex justify-end pt-1 sm:pt-2">
                 <Button
                     type="submit"
                     variant="secondary"
                     isLoading={isLoading}
                     disabled={isLoading || isFormIncomplete}
-                    className="px-8 py-3 rounded-full bg-lime text-black font-semibold text-base hover:bg-lime/90 cursor-pointer shadow-xs transition-transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full sm:w-auto px-6 py-2.5 sm:px-8 sm:py-3 rounded-full bg-lime text-black font-semibold text-sm sm:text-base hover:bg-lime/90 cursor-pointer shadow-xs transition-transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     Sign In
                 </Button>
             </div>
 
-            {/* Divider */}
-            <div className="flex items-center my-2">
-                <div className="flex-1 border-t border-gray-200"></div>
-                <span className="px-3 text-xs text-gray-400 font-medium">or</span>
-                <div className="flex-1 border-t border-gray-200"></div>
-            </div>
-
             {/* Social Logins */}
-            <div className="flex items-center justify-center gap-4">
-                <button
-                    type="button"
-                    className="size-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-colors cursor-pointer"
-                    aria-label="Sign in with Facebook"
-                >
-                    <FaFacebook className="size-5 text-[#1877F2]" />
-                </button>
-                <button
-                    type="button"
-                    className="size-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-colors cursor-pointer"
-                    aria-label="Sign in with Google"
-                >
-                    <FaGoogle className="size-4 text-gray-800" />
-                </button>
-            </div>
+            <SocialAuth label="or" />
         </form>
     );
 };

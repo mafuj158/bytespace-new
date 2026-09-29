@@ -19,11 +19,11 @@ const AuthHeader = () => {
     const content = isRegister ? AUTH_CONTENT["/register"] : AUTH_CONTENT["/login"]
 
     return (
-        <div className="flex flex-col gap-2 text-white">
-            <h1 className="text-xl font-semibold text-white">
+        <div className="flex flex-col gap-1 sm:gap-2 text-white text-center lg:text-left max-w-md lg:max-w-none">
+            <h1 className="text-lg sm:text-xl font-semibold text-white">
                 {content.title}
             </h1>
-            <p className="text-lg text-[#F5F5F6] font-satoshi leading-relaxed">
+            <p className="text-xs sm:text-sm lg:text-base xl:text-lg text-[#F5F5F6] font-satoshi leading-relaxed">
                 {content.subtitle}
             </p>
         </div>

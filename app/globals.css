@@ -3,7 +3,8 @@
 /* Satoshi 300 - Light */
 @font-face {
   font-family: "Satoshi";
-  src: url("https://cdn.fontshare.com/wf/D7WD5OXZFWQ5T76HSPWAC7MNKAJXE2YG/LUGNSPO5YC34ABNB2O6K7AFDSOJZT56V/WNDVG7O66ENLOD43GS7FBUCC4KMT5OM2.woff2") format("woff2");
+  src: url("https://cdn.fontshare.com/wf/D7WD5OXZFWQ5T76HSPWAC7MNKAJXE2YG/LUGNSPO5YC34ABNB2O6K7AFDSOJZT56V/WNDVG7O66ENLOD43GS7FBUCC4KMT5OM2.woff2")
+    format("woff2");
   font-weight: 300;
   font-display: swap;
   font-style: normal;
@@ -12,7 +13,8 @@
 /* Satoshi 400 - Regular */
 @font-face {
   font-family: "Satoshi";
-  src: url("https://cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2") format("woff2");
+  src: url("https://cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2")
+    format("woff2");
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -21,7 +23,8 @@
 /* Satoshi 500 - Medium */
 @font-face {
   font-family: "Satoshi";
-  src: url("https://cdn.fontshare.com/wf/P2LQKHE6KA6ZP4AAGN72KDWMHH6ZH3TA/ZC32TK2P7FPS5GFTL46EU6KQJA24ZYDB/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff2") format("woff2");
+  src: url("https://cdn.fontshare.com/wf/P2LQKHE6KA6ZP4AAGN72KDWMHH6ZH3TA/ZC32TK2P7FPS5GFTL46EU6KQJA24ZYDB/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff2")
+    format("woff2");
   font-weight: 500;
   font-display: swap;
   font-style: normal;
@@ -30,7 +33,8 @@
 /* Satoshi 700 - Bold */
 @font-face {
   font-family: "Satoshi";
-  src: url("https://cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2") format("woff2");
+  src: url("https://cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2")
+    format("woff2");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -39,7 +43,8 @@
 /* Satoshi 900 - Black */
 @font-face {
   font-family: "Satoshi";
-  src: url("https://cdn.fontshare.com/wf/NHPGVFYUXYXE33DZ75OIT4JFGHITX5PE/PSUTMASCDJTVPERDYJZPN23BVUFUCQIF/J64QX5IPOHK56I2KYUNBQ5M2XWZEYKYX.woff2") format("woff2");
+  src: url("https://cdn.fontshare.com/wf/NHPGVFYUXYXE33DZ75OIT4JFGHITX5PE/PSUTMASCDJTVPERDYJZPN23BVUFUCQIF/J64QX5IPOHK56I2KYUNBQ5M2XWZEYKYX.woff2")
+    format("woff2");
   font-weight: 900;
   font-display: swap;
   font-style: normal;
@@ -48,8 +53,8 @@
 :root {
   --background: #fff;
   --foreground: #040819;
-  --color-primary: #003BE2;
-  --color-lime: #D4FB20;
+  --color-primary: #003be2;
+  --color-lime: #d4fb20;
 }
 
 @theme inline {
@@ -59,13 +64,15 @@
   --color-lime: var(--color-lime);
   --font-satoshi: "Satoshi", sans-serif;
   --font-poppins: var(--font-poppins);
-   /* custom breakpoints */
+  /* custom breakpoints */
   --breakpoint-3xs: 375px;
   /* For small phones */
   --breakpoint-2xs: 390px;
   /* For medium phones */
   --breakpoint-xs: 480px;
   /* For small tablets */
+  --breakpoint-xxl: 1440px;
+  /* For 1440px desktop */
   --breakpoint-3xl: 1920px;
   /* For desktop version */
 }
@@ -79,6 +86,28 @@ body {
 
 @utility container {
   margin-inline: auto;
-  padding-inline: 1rem;
   max-width: 1536px;
+  padding-inline: 1rem;
+  
+  @media (min-width: 480px) {
+    padding-inline: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    padding-inline: 2rem;
+  }
+  @media (min-width: 768px) {
+    padding-inline: 2.5rem;
+  }
+  @media (min-width: 1024px) {
+    padding-inline: 3.5rem;
+  }
+  @media (min-width: 1280px) {
+    padding-inline: 5rem;
+  }
+  @media (min-width: 1440px) {
+    padding-inline: 120px;
+  }
+  @media (min-width: 1536px) {
+    padding-inline: 1rem;
+  }
 }
