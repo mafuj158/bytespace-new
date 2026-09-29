@@ -474,24 +474,24 @@ export const LEARNING_PATHS: LearningPath[] = [
 export const TESTIMONIALS: Testimonial[] = [
     {
         id: "t1",
-        name: "Jane Doe",
-        role: "UI/UX Student",
+        name: "Sarah M.",
+        role: "Enthusiastic Learner",
         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
-        content: "ByteSpace transformed the way I learn. The courses are practical, well-structured, and guided by top industry mentors who actually care about your progress.",
+        content: "ByteSpace has transformed my approach to learning. The diverse range of courses and the quality of content provided by creators have exceeded my expectations. The platform truly fosters a sense of community and lifelong learning.",
     },
     {
         id: "t2",
-        name: "Thomas K.",
-        role: "Web Developer",
+        name: "James L.",
+        role: "Lifelong Learner",
         avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
-        content: "The quality of production and step-by-step clarity in every module is unmatched. I landed my first frontend role just 3 months after finishing the courses.",
+        content: "I've tried several online learning platforms, and ByteSpace stands out for its vibrant community and the variety of courses available. The easy navigation and engaging content make it a go-to platform for continuous skill development.",
     },
     {
         id: "t3",
-        name: "Paul B.",
-        role: "Product Designer",
+        name: "Alex B.",
+        role: "Inspired Creator",
         avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
-        content: "As both a student and a creator, ByteSpace provides the smoothest interface and a genuinely supportive global community of creative minds.",
+        content: "As a creator, ByteSpace has been a game-changer for me. The Course Editor is user-friendly, and the support from the community is incredible. It's fulfilling to see my courses making a positive impact on learners globally.",
     },
 ];
 

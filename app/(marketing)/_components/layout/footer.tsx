@@ -60,8 +60,7 @@ const Footer = () => {
                     
                     {/* Left Column: Brand & Newsletter */}
                     <div className="lg:col-span-6 flex flex-col items-start max-w-lg">
-                        <Logo textClassName="text-[#040819] font-satoshi text-2xl font-bold" />
-                        
+                        <Logo />
                         <p className="mt-6 text-sm text-gray-700 leading-relaxed">
                             Stay Up to date with our latest features and releases by joining our newsletter.
                         </p>
