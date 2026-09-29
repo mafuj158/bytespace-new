@@ -23,7 +23,7 @@ const Features = () => {
             {/* content */}
             <div className="container z-20 relative flex flex-col gap-8 sm:gap-10 lg:gap-10">
                 {/* professional growth */}
-                <div className="flex flex-col-reverse lg:flex-row justify-between items-center gap-4 sm:gap-6 lg:gap-12 xl:gap-16">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
                     {/* left side */}
                     <div className="flex-1 xl:max-w-xl 2xl:max-w-3xl flex flex-col gap-3.5 sm:gap-4 lg:gap-6 justify-center text-left items-start">
                         <p className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[44px] font-semibold tracking-[-0.44px] leading-tight lg:leading-12.5 xl:leading-[52.8px]">
@@ -46,7 +46,7 @@ const Features = () => {
                         </div>
                     </div>
                     {/* right side */}
-                    <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-115 xl:max-w-130 h-56 xs:h-64 sm:h-72 md:h-80 lg:h-95 xl:h-105 flex justify-center items-center shrink-0">
+                    <div className="w-full max-w-xs sm:max-w-sm md:max-w-[320px] lg:max-w-115 xl:max-w-130 h-56 xs:h-64 sm:h-72 md:h-76 lg:h-95 xl:h-105 flex justify-center items-center shrink-0">
                         <Image
                             src={growth_banner}
                             alt="growth banner"
@@ -57,9 +57,9 @@ const Features = () => {
                 </div>
 
                 {/* create and manage */}
-                <div className="flex flex-col lg:flex-row justify-between items-center gap-4 sm:gap-6 lg:gap-12 xl:gap-16">
+                <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
                     {/* left side */}
-                    <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-115 xl:max-w-130 h-56 xs:h-64 sm:h-72 md:h-80 lg:h-95 xl:h-105 flex justify-center items-center shrink-0">
+                    <div className="w-full max-w-xs sm:max-w-sm md:max-w-[320px] lg:max-w-115 xl:max-w-130 h-56 xs:h-64 sm:h-72 md:h-76 lg:h-95 xl:h-105 flex justify-center items-center shrink-0">
                         <Image
                             src={manage_banner}
                             alt="create and manage banner"

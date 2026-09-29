@@ -36,14 +36,18 @@ const Header = () => {
                 className={cn(
                     "fixed top-0 left-0 right-0 w-full z-90 transition-all duration-300 ease-in-out",
                     isScrolled
-                        ? "bg-[#003BE2]/90 backdrop-blur-md border-b border-white/10 shadow-[0_4px_25px_rgba(0,0,0,0.12)] py-3 sm:py-3.5"
+                        ? "bg-[#003BE2]/90 backdrop-blur-md border-b border-white/10 shadow-[0_4px_25px_rgba(0,0,0,0.12)] py-2.5 sm:py-3.5"
                         : "bg-transparent border-b border-transparent py-4 sm:py-5 lg:py-7"
                 )}
             >
                 <div className="container flex justify-between items-center">
                     {/* Left: Brand Logo */}
                     <div className="shrink-0 flex items-center">
-                        <Logo textClassName="text-white text-xl sm:text-2xl font-bold tracking-tight" />
+                        <Logo
+                            textClassName="text-white text-[15px] 2xs:text-base xs:text-lg sm:text-xl md:text-2xl font-bold tracking-tight"
+                            logoWrapperClass="size-5.5 2xs:size-6 xs:size-7 sm:size-8"
+                            wrapperClassName="gap-1.5 2xs:gap-2 xs:gap-2.5 sm:gap-3"
+                        />
                     </div>
 
                     {/* Center: Desktop Navigation Links (>= 1024px) */}

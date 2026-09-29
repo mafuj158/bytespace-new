@@ -143,7 +143,11 @@ const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
                     {/* Top Bar inside Overlay */}
                     <div className="relative z-10 flex items-center justify-between w-full">
                         <div onClick={onClose} className="cursor-pointer">
-                            <Logo textClassName="text-white text-lg sm:text-xl font-bold tracking-tight" />
+                            <Logo
+                                textClassName="text-white text-[15px] 2xs:text-base xs:text-lg sm:text-xl font-bold tracking-tight"
+                                logoWrapperClass="size-5.5 2xs:size-6 xs:size-7 sm:size-8"
+                                wrapperClassName="gap-1.5 2xs:gap-2 xs:gap-2.5 sm:gap-3"
+                            />
                         </div>
 
                         <button
