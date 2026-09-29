@@ -124,7 +124,7 @@ const Explore = () => {
                     </p>
                 </div>
                 {/* explore items grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10">
                     {LEARNING_PATHS.map((path) => (
                         <Link
                             key={path.id}
