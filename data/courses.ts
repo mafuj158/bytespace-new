@@ -462,8 +462,8 @@ As you progress through the course, you'll ascend to higher levels of expertise,
 export const LEARNING_PATHS: LearningPath[] = [
     { id: "1", title: "Design", slug: "design", icon: "design" },
     { id: "2", title: "Development", slug: "development", icon: "development" },
-    { id: "3", title: "Business", slug: "business", icon: "business" },
-    { id: "4", title: "Animation", slug: "animation", icon: "animation" },
+    { id: "3", title: "IT & Software", slug: "it-software", icon: "it-software" },
+    { id: "4", title: "Business", slug: "business", icon: "business" },
     { id: "5", title: "Marketing", slug: "marketing", icon: "marketing" },
     { id: "6", title: "Photography", slug: "photography", icon: "photography" },
 ];

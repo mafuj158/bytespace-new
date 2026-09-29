@@ -3,6 +3,7 @@ import React from "react";
 import Hero from "./_components/home/hero";
 import Marquee from "./_components/home/marquee";
 import CoursesShowcase from "./_components/home/courses-showcase";
+import Explore from "./_components/home/explore";
 
 export const metadata: Metadata = {
   title: "Home | Bytespace",
@@ -18,6 +19,8 @@ const Home = () => {
       <Marquee />
       {/* courses showcase */}
       <CoursesShowcase />
+      {/* explore */}
+      <Explore />
     </>
 
   )
