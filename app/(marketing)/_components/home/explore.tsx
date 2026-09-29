@@ -112,29 +112,29 @@ const ICONS_MAP: Record<string, React.ReactNode> = {
 
 const Explore = () => {
     return (
-        <section id="explore" className="pb-18">
-            <div className="container flex flex-col gap-16">
+        <section id="explore" className="pb-10 sm:pb-14 md:pb-18 lg:pb-20">
+            <div className="container flex flex-col gap-6 sm:gap-8 md:gap-12 lg:gap-16">
                 {/* heading */}
-                <div className="flex flex-col justify-start items-center gap-4">
-                    <h2 className="text-5xl tracking-[-0.44px] leading-14 font-semibold text-center text-gray-900">
+                <div className="flex flex-col justify-start items-center gap-2 sm:gap-3 max-w-3xl mx-auto">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight leading-tight font-semibold text-center text-gray-900">
                         Explore Diverse Learning Paths at Bytespace
                     </h2>
-                    <p className="text-lg max-w-5xl text-[#82868E] text-center">
+                    <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#82868E] text-center px-4">
                         At Bytespace, we believe in empowering individuals through knowledge. Our diverse range of courses spans various fields, ensuring there&apos;s something for everyone. Unleash your potential and explore our carefully curated categories.
                     </p>
                 </div>
                 {/* explore items grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
                     {LEARNING_PATHS.map((path) => (
                         <Link
                             key={path.id}
                             href={`#courses`}
-                            className="group flex flex-col items-center justify-center gap-5 p-6 py-8 bg-white border border-[#CED0D3] rounded-3xl hover:border-lime hover:shadow-lg transition-all duration-300 cursor-pointer"
+                            className="group flex flex-col items-center justify-center gap-2.5 sm:gap-3.5 md:gap-5 p-3.5 sm:p-5 md:p-6 py-4.5 sm:py-6 md:py-8 bg-white border border-[#CED0D3] rounded-2xl sm:rounded-3xl hover:border-lime hover:shadow-lg transition-all duration-300 cursor-pointer"
                         >
-                            <div className="w-16 h-16 rounded-full bg-[#D4FB20] flex items-center justify-center text-black shadow-xs transition-transform duration-300 group-hover:scale-110">
+                            <div className="size-11 sm:size-13 md:size-16 rounded-full bg-[#D4FB20] flex items-center justify-center text-black shadow-xs transition-transform duration-300 group-hover:scale-110 [&>svg]:size-5 sm:[&>svg]:size-6 md:[&>svg]:size-9">
                                 {ICONS_MAP[path.slug]}
                             </div>
-                            <span className="font-medium text-lg text-gray-900 text-center tracking-tight group-hover:text-black">
+                            <span className="font-semibold sm:font-medium text-xs sm:text-sm md:text-base lg:text-lg text-gray-900 text-center tracking-tight group-hover:text-black">
                                 {path.title}
                             </span>
                         </Link>

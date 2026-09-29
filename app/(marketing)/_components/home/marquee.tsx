@@ -50,7 +50,7 @@ const LOGO_ITEMS = [
 
 const MarqueeSection = () => {
     return (
-        <section id="marquee" className="w-full py-12 sm:py-16 bg-[#F5F5F6] border-y border-gray-200/60 overflow-hidden">
+        <section id="marquee" className="w-full py-6 xs:py-12 sm:py-16 bg-[#F5F5F6] border-y border-gray-200/60 overflow-hidden">
             <div className="w-full">
                 <Marquee
                     gradient={true}
@@ -68,7 +68,7 @@ const MarqueeSection = () => {
                                 <div className="text-gray-600">
                                     {item.icon}
                                 </div>
-                                <span className="font-bold text-xl sm:text-3xl tracking-tight font-satoshi text-gray-400">
+                                <span className="font-bold text-lg xs:text-xl sm:text-3xl tracking-tight font-satoshi text-gray-400">
                                     {item.name}
                                 </span>
                             </div>
