@@ -59,7 +59,7 @@
   --color-lime: var(--color-lime);
   --font-satoshi: "Satoshi", sans-serif;
   --font-poppins: var(--font-poppins);
-  /* custom breakpoints */
+   /* custom breakpoints */
   --breakpoint-3xs: 375px;
   /* For small phones */
   --breakpoint-2xs: 390px;

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import React from "react";
 import Hero from "./_components/home/hero";
 import Marquee from "./_components/home/marquee";
+import CoursesShowcase from "./_components/home/courses-showcase";
 
 export const metadata: Metadata = {
   title: "Home | Bytespace",
@@ -15,6 +16,8 @@ const Home = () => {
       <Hero />
       {/* marquee */}
       <Marquee />
+      {/* courses showcase */}
+      <CoursesShowcase />
     </>
 
   )
