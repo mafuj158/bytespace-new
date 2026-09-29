@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import React from "react";
+import Hero from "./_components/home/hero";
+import Marquee from "./_components/home/marquee";
+import CoursesShowcase from "./_components/home/courses-showcase";
+import Explore from "./_components/home/explore";
+import Features from "./_components/home/features";
+import JoinAsCreator from "./_components/home/join-as-creator";
+import Testimonials from "./_components/home/testimonials";
 
 export const metadata: Metadata = {
   title: "Home | Bytespace",
@@ -7,7 +13,24 @@ export const metadata: Metadata = {
 };
 
 const Home = () => {
-  return <div className="font-satoshi font-bold">Home</div>;
+  return (
+    <>
+      {/* hero */}
+      <Hero />
+      {/* marquee */}
+      <Marquee />
+      {/* courses showcase */}
+      <CoursesShowcase />
+      {/* explore */}
+      <Explore />
+      {/* features */}
+      <Features />
+      {/* join as creator */}
+      <JoinAsCreator />
+      {/* testimonials */}
+      <Testimonials />
+    </>
+  )
 };
 
 export default Home;

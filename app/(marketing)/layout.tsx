@@ -1,5 +1,5 @@
-import Footer from "./_components/footer"
-import Header from "./_components/header"
+import Footer from "./_components/layout/footer"
+import Header from "./_components/layout/header"
 
 
 const MarketingLayout = ({ children }: LayoutProps<"/">) => {

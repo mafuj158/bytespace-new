@@ -59,6 +59,15 @@
   --color-lime: var(--color-lime);
   --font-satoshi: "Satoshi", sans-serif;
   --font-poppins: var(--font-poppins);
+   /* custom breakpoints */
+  --breakpoint-3xs: 375px;
+  /* For small phones */
+  --breakpoint-2xs: 390px;
+  /* For medium phones */
+  --breakpoint-xs: 480px;
+  /* For small tablets */
+  --breakpoint-3xl: 1920px;
+  /* For desktop version */
 }
 
 body {
