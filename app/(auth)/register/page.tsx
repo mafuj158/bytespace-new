@@ -1,5 +1,6 @@
 
 import type { Metadata } from "next";
+import Form from "./_components/form";
 
 export const metadata: Metadata = {
   title: "Register | Bytespace",
@@ -7,7 +8,15 @@ export const metadata: Metadata = {
 };
 
 const Register = () => {
-  return <div>Register</div>;
+  return (
+    <div className="w-full flex flex-col">
+      {/* header */}
+      <div></div>
+      {/* form */}
+      <Form />
+      {/* footer */}
+    </div>
+  );
 };
 
 export default Register;
