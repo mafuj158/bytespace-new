@@ -30,7 +30,7 @@ const Header = () => {
                     : "bg-transparent border-b border-transparent py-6 sm:py-8"
             )}
         >
-            <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
+            <div className="container flex justify-between items-center">
                 {/* Left: Brand Logo */}
                 <div className="flex-1 flex justify-start">
                     <Logo textClassName="text-white" />

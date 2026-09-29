@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import CommonFieldset from "@/components/ui/fieldset";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import SocialAuth from "../../_components/social-auth";
 
 type TFormInputs = {
     name: string;
@@ -98,6 +99,9 @@ const Form = () => {
                     Continue
                 </Button>
             </div>
+
+            {/* Social Logins */}
+            <SocialAuth label="or" />
         </form>
     );
 };
