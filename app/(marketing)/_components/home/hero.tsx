@@ -59,13 +59,11 @@ const Hero = () => {
                     className="w-full h-full object-cover"
                 />
             </div>
-
             {/* floating card 1: UI/UX Design (Left of Character) */}
             <div className="absolute z-20 bg-white rounded-xl p-4 sm:p-5 shadow-2xl border border-white/80 top-[60%] left-[27%] hidden lg:block">
                 <p className="font-bold text-[#040819] text-sm font-satoshi">UI/UX Design</p>
                 <p className="text-xs text-gray-500 font-medium mt-1">200 Courses • 1000+ Students</p>
             </div>
-
             {/* floating card 2: Learning Progress 55% (Right of Character) */}
             <div className="absolute z-20 bg-white rounded-xl p-5 sm:p-6 shadow-2xl border border-white/80 top-[64%] right-[27%] min-w-52.5 hidden lg:block">
                 <p className="text-xs text-gray-500 font-medium">Learning Progress</p>
@@ -74,7 +72,6 @@ const Hero = () => {
                     <div className="bg-[#D4FB20] h-full w-[55%] rounded-full" />
                 </div>
             </div>
-
             {/* floating card 3: Happy Students (Bottom Left of Character) */}
             <div className="absolute z-20 bg-white rounded-xl p-4 sm:p-5 shadow-2xl border border-white/80 bottom-10 left-[29%] min-w-57.5 hidden lg:block">
                 <div className="flex items-center justify-between gap-3 mb-2.5">
@@ -97,7 +94,6 @@ const Hero = () => {
                     </span>
                 </div>
             </div>
-
             {/* green spring */}
             <motion.div
                 animate={{ y: [0, -14, 0], rotate: [0, 3, 0] }}
@@ -140,7 +136,6 @@ const Hero = () => {
                     className=" w-full h-full object-contain"
                 />
             </motion.div>
-
             {/* right shape-lime-cylinder */}
             <motion.div
                 animate={{ y: [0, -14, 0], rotate: [0, -2, 0] }}
@@ -210,7 +205,6 @@ const Hero = () => {
                     </button>
                 </form>
             </div>
-
         </section>
     );
 };

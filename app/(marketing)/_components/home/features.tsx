@@ -21,7 +21,7 @@ const Features = () => {
     return (
         <div className="py-28 relative overflow-hidden">
             {/* content */}
-            <div className="container z-20 relative flex flex-col gap-20">
+            <div className="container z-20 relative flex flex-col gap-10">
                 {/* professional growth */}
                 <div className="flex justify-between items-center gap-16">
                     {/* left side */}
