@@ -40,11 +40,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       "flex items-center justify-center font-medium text-base rounded transition-all ease-in-out duration-300 hover:opacity-90 disabled:opacity-50 disabled:pointer-events-none cursor-pointer";
 
     const variants = {
-      primary: "bg-forest hover:bg-forest/90 text-white",
-      secondary: "bg-lime hover:bg-lime/90 text-foreground",
+      primary: "bg-primary hover:bg-primary/90 text-white",
+      secondary: "bg-lime hover:bg-lime/90 text-black font-semibold",
       outline:
-        "border border-zinc-200 bg-white hover:bg-zinc-50 hover:border-zinc-300 text-zinc-800 hover:text-forest shadow-2xs",
-      ghost: "bg-transparent text-zinc-700 hover:text-forest hover:bg-forest/5",
+        "border border-zinc-200 bg-white hover:bg-zinc-50 hover:border-zinc-300 text-zinc-800 hover:text-primary shadow-2xs",
+      ghost: "bg-transparent text-zinc-700 hover:text-primary hover:bg-primary/5",
       danger: "bg-rose-600 hover:bg-rose-700 text-white",
     };
 

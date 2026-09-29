@@ -2,36 +2,35 @@
 
 import { Button } from "@/components/ui/button";
 import CommonFieldset from "@/components/ui/fieldset";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FaFacebook, FaGoogle } from "react-icons/fa";
 
-type TFormInputs = {
-    name: string;
+type TLoginFormInputs = {
     email: string;
     password: string;
 };
 
-const Form = () => {
+const LoginForm = () => {
     const [isLoading, setIsLoading] = useState(false);
     const {
         control,
         handleSubmit,
         watch,
         formState: { errors },
-    } = useForm<TFormInputs>({
+    } = useForm<TLoginFormInputs>({
         defaultValues: {
-            name: "",
             email: "",
             password: "",
         },
     });
 
-    const [name, email, password] = watch(["name", "email", "password"]);
-    const isFormIncomplete = !name?.trim() || !email?.trim() || !password?.trim();
+    const [email, password] = watch(["email", "password"]);
+    const isFormIncomplete = !email?.trim() || !password?.trim();
 
-    const onSubmit = async (data: TFormInputs) => {
+    const onSubmit = async (data: TLoginFormInputs) => {
         setIsLoading(true);
-        console.log("Register Form Data:", data);
+        console.log("Login Form Data:", data);
         setTimeout(() => {
             setIsLoading(false);
         }, 1000);
@@ -39,20 +38,6 @@ const Form = () => {
 
     return (
         <form className="flex flex-col gap-5 mt-8" onSubmit={handleSubmit(onSubmit)}>
-            {/* Full Name */}
-            <CommonFieldset
-                control={control}
-                register_as="name"
-                label="Full Name"
-                placeholder="Jamie Davis"
-                isRequired
-                validationRules={{
-                    required: "Full name is required",
-                    minLength: { value: 2, message: "Name must be at least 2 characters" },
-                }}
-                errors={errors}
-            />
-
             {/* Email */}
             <CommonFieldset
                 control={control}
@@ -95,11 +80,36 @@ const Form = () => {
                     disabled={isLoading || isFormIncomplete}
                     className="px-8 py-3 rounded-full bg-lime text-black font-semibold text-base hover:bg-lime/90 cursor-pointer shadow-xs transition-transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                    Continue
+                    Sign In
                 </Button>
+            </div>
+
+            {/* Divider */}
+            <div className="flex items-center my-2">
+                <div className="flex-1 border-t border-gray-200"></div>
+                <span className="px-3 text-xs text-gray-400 font-medium">or</span>
+                <div className="flex-1 border-t border-gray-200"></div>
+            </div>
+
+            {/* Social Logins */}
+            <div className="flex items-center justify-center gap-4">
+                <button
+                    type="button"
+                    className="size-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-colors cursor-pointer"
+                    aria-label="Sign in with Facebook"
+                >
+                    <FaFacebook className="size-5 text-[#1877F2]" />
+                </button>
+                <button
+                    type="button"
+                    className="size-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-colors cursor-pointer"
+                    aria-label="Sign in with Google"
+                >
+                    <FaGoogle className="size-4 text-gray-800" />
+                </button>
             </div>
         </form>
     );
 };
 
-export default Form;
+export default LoginForm;

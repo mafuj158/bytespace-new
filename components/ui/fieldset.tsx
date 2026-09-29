@@ -126,10 +126,10 @@ const CommonFieldset = <T extends FieldValues>({
 
       <div
         className={cn(
-          "w-full min-w-0 max-w-full flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 rounded bg-white text-black border transition-all duration-200",
+          "w-full min-w-0 max-w-full flex items-center gap-2 px-3.5 sm:px-4 py-3 sm:py-3.5 rounded-xl bg-white text-black border transition-all duration-200",
           errorMessage
             ? "border-red-500 focus-within:border-red-500 focus-within:ring-1 focus-within:ring-red-500"
-            : "border-[#DFE1E7] focus-within:border-lime focus-within:ring-1 focus-within:ring-lime",
+            : "border-[#DFE1E7] focus-within:border-primary focus-within:ring-1 focus-within:ring-primary",
           innerWrapper
         )}
       >
