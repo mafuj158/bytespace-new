@@ -37,7 +37,7 @@ const LoginForm = () => {
     };
 
     return (
-        <form className="flex flex-col gap-5 mt-8" onSubmit={handleSubmit(onSubmit)}>
+        <form className="flex flex-col gap-3.5 sm:gap-4.5 mt-4 sm:mt-6" onSubmit={handleSubmit(onSubmit)}>
             {/* Email */}
             <CommonFieldset
                 control={control}
@@ -72,13 +72,13 @@ const LoginForm = () => {
             />
 
             {/* Submit Button */}
-            <div className="flex justify-end pt-2">
+            <div className="flex justify-end pt-1 sm:pt-2">
                 <Button
                     type="submit"
                     variant="secondary"
                     isLoading={isLoading}
                     disabled={isLoading || isFormIncomplete}
-                    className="px-8 py-3 rounded-full bg-lime text-black font-semibold text-base hover:bg-lime/90 cursor-pointer shadow-xs transition-transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full sm:w-auto px-6 py-2.5 sm:px-8 sm:py-3 rounded-full bg-lime text-black font-semibold text-sm sm:text-base hover:bg-lime/90 cursor-pointer shadow-xs transition-transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     Sign In
                 </Button>
