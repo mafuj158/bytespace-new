@@ -1,0 +1,33 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "feature/auth-pages-design",
+    "feature/auth-pages-responsive",
+    "feature/course-details-page",
+    "feature/course-details-page-design-and-responsive",
+    "feature/courses-page-design",
+    "feature/landing-page-responsive",
+    "main",
+    "origin"
+  ],
+  "parent": {
+    "feature/auth-pages-design": "main",
+    "feature/auth-pages-responsive": "main",
+    "feature/course-details-page": "main",
+    "feature/course-details-page-design-and-responsive": "feature/course-details-page",
+    "feature/courses-page-design": "main",
+    "feature/landing-page-responsive": "main",
+    "main": null,
+    "origin": "main"
+  },
+  "order": [
+    "main",
+    "feature/auth-pages-design",
+    "feature/auth-pages-responsive",
+    "feature/course-details-page",
+    "feature/courses-page-design",
+    "feature/landing-page-responsive",
+    "origin",
+    "feature/course-details-page-design-and-responsive"
+  ]
+}
