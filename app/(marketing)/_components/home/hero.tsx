@@ -186,7 +186,7 @@ const Hero = () => {
                 <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#E5E6E8] pb-6 sm:pb-8 md:pb-10 lg:pb-16 text-center max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl">
                     Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.
                 </p>
-                
+
                 {/* Search Form with React Hook Form - Separate Pills with Gap */}
                 <form
                     onSubmit={handleSubmit(onSubmit)}
