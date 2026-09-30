@@ -312,7 +312,7 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         reviewsCount: 185,
         studentsCount: 3100,
         level: COURSE_LEVELS[0],
-        price: 25,
+        price: 400,
         billingPeriod: "lifetime",
         lessonsCount: 17,
         duration: "2 hours 16 mins",
@@ -337,7 +337,7 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         reviewsCount: 220,
         studentsCount: 3400,
         level: COURSE_LEVELS[2],
-        price: 25,
+        price: 400,
         billingPeriod: "lifetime",
         lessonsCount: 48,
         duration: "18 hours 30 mins",
@@ -360,7 +360,7 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         reviewsCount: 130,
         studentsCount: 1600,
         level: COURSE_LEVELS[1],
-        price: 25,
+        price: 250,
         billingPeriod: "lifetime",
         lessonsCount: 22,
         duration: "5 hours 45 mins",
@@ -382,7 +382,7 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         reviewsCount: 195,
         studentsCount: 2750,
         level: COURSE_LEVELS[0],
-        price: 25,
+        price: 125,
         billingPeriod: "lifetime",
         lessonsCount: 19,
         duration: "3 hours 50 mins",
@@ -404,7 +404,7 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         reviewsCount: 155,
         studentsCount: 1980,
         level: COURSE_LEVELS[1],
-        price: 25,
+        price: 100,
         billingPeriod: "lifetime",
         lessonsCount: 34,
         duration: "9 hours 20 mins",
@@ -499,6 +499,34 @@ export const TESTIMONIALS: Testimonial[] = [
         content: "As a creator, ByteSpace has been a game-changer for me. The Course Editor is user-friendly, and the support from the community is incredible. It's fulfilling to see my courses making a positive impact on learners globally.",
     },
 ];
+
+
+
+export const SORT_OPTIONS = [
+    { label: "Most relevant", value: "relevant" },
+    { label: "Most popular", value: "popular" },
+    { label: "Highest rated", value: "rating" },
+    { label: "Newest", value: "newest" },
+    { label: "Price: Low to High", value: "price_asc" },
+    { label: "Price: High to Low", value: "price_desc" },
+];
+
+export interface FilterTabItem {
+    key: "level" | "category";
+    label: string;
+}
+
+export const FILTER_TABS: FilterTabItem[] = [
+    {
+        key: "level",
+        label: "Level",
+    },
+    {
+        key: "category",
+        label: "Category",
+    },
+];
+
 
 // -------------------------------------------------------------
 // Helper functions
