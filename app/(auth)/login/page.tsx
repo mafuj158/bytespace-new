@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   description: "Log in to your ByteSpace account to access your courses and dashboard.",
 };
 
-const Login = () => {
+const Login =  () => {
+
   return (
     <div className="w-full flex flex-col justify-between h-full">
       {/* Header */}
@@ -34,4 +35,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login;

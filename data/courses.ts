@@ -1,4 +1,4 @@
-import { Category, Course, Creator, LearningPath, Testimonial } from "@/types";
+import { Category, Course, CourseLevel, Creator, LearningPath, Testimonial } from "@/types";
 
 // -------------------------------------------------------------
 // 1. FILTER CATEGORIES (For Discover Your Passion pill tags)
@@ -33,6 +33,11 @@ export const COURSE_CATEGORIES: Category[] = [
     { id: "27", name: "Cloud & DevOps", slug: "cloud-devops" },
     { id: "28", name: "Motion Design", slug: "motion-design" },
 ];
+export const COURSE_LEVELS: CourseLevel[] = [
+    { id: "01", name: "Beginner", slug: "beginner" },
+    { id: "02", name: "Intermediate", slug: "intermediate" },
+    { id: "03", name: "Advanced", slug: "advanced" },
+];
 
 // -------------------------------------------------------------
 // 2. CREATORS
@@ -46,6 +51,7 @@ export const PUREPEARL_STUDIO: Creator = {
     bio: "Welcome to the creative world of PurePearl Studio. Here, you'll discover the passion, expertise, and inspiration that drive my creative journey. Let's explore and learn together! Dive into my creative portfolio, showcasing a glimpse of my artistic endeavors. From digital designs to multimedia projects, each piece tells a unique story. Explore the world of creativity with me.",
     productsCount: 3,
     followersCount: 12,
+    studentsCount: 2300,
 };
 
 // Helper to find category by slug
@@ -67,7 +73,7 @@ export const COURSES: Course[] = [
         rating: 4.5,
         reviewsCount: 140,
         studentsCount: 2300,
-        level: "Beginner",
+        level: COURSE_LEVELS[0],
         price: 25,
         billingPeriod: "lifetime",
         lessonsCount: 17,
@@ -92,7 +98,7 @@ export const COURSES: Course[] = [
         rating: 4.8,
         reviewsCount: 172,
         studentsCount: 199,
-        level: "Intermediate",
+        level: COURSE_LEVELS[1],
         price: 25,
         billingPeriod: "lifetime",
         lessonsCount: 112,
@@ -231,7 +237,7 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         rating: 4.5,
         reviewsCount: 110,
         studentsCount: 1850,
-        level: "Beginner",
+       level: COURSE_LEVELS[0],
         price: 25,
         billingPeriod: "lifetime",
         lessonsCount: 17,
@@ -256,7 +262,7 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         rating: 4.5,
         reviewsCount: 95,
         studentsCount: 1420,
-        level: "Beginner",
+        level: COURSE_LEVELS[0],
         price: 25,
         billingPeriod: "lifetime",
         lessonsCount: 17,
@@ -281,7 +287,7 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         rating: 4.5,
         reviewsCount: 160,
         studentsCount: 2900,
-        level: "Beginner",
+        level: COURSE_LEVELS[2],
         price: 25,
         billingPeriod: "lifetime",
         lessonsCount: 17,
@@ -306,8 +312,8 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         rating: 4.5,
         reviewsCount: 185,
         studentsCount: 3100,
-        level: "Beginner",
-        price: 25,
+        level: COURSE_LEVELS[0],
+        price: 400,
         billingPeriod: "lifetime",
         lessonsCount: 17,
         duration: "2 hours 16 mins",
@@ -331,8 +337,8 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         rating: 4.9,
         reviewsCount: 220,
         studentsCount: 3400,
-        level: "Beginner",
-        price: 25,
+        level: COURSE_LEVELS[2],
+        price: 400,
         billingPeriod: "lifetime",
         lessonsCount: 48,
         duration: "18 hours 30 mins",
@@ -354,8 +360,8 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         rating: 4.7,
         reviewsCount: 130,
         studentsCount: 1600,
-        level: "Intermediate",
-        price: 25,
+        level: COURSE_LEVELS[1],
+        price: 250,
         billingPeriod: "lifetime",
         lessonsCount: 22,
         duration: "5 hours 45 mins",
@@ -376,8 +382,8 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         rating: 4.6,
         reviewsCount: 195,
         studentsCount: 2750,
-        level: "Beginner",
-        price: 25,
+        level: COURSE_LEVELS[0],
+        price: 125,
         billingPeriod: "lifetime",
         lessonsCount: 19,
         duration: "3 hours 50 mins",
@@ -398,8 +404,8 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         rating: 4.8,
         reviewsCount: 155,
         studentsCount: 1980,
-        level: "Intermediate",
-        price: 25,
+        level: COURSE_LEVELS[1],
+        price: 100,
         billingPeriod: "lifetime",
         lessonsCount: 34,
         duration: "9 hours 20 mins",
@@ -420,7 +426,7 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         rating: 4.9,
         reviewsCount: 210,
         studentsCount: 3200,
-        level: "Beginner",
+        level: COURSE_LEVELS[0],
         price: 25,
         billingPeriod: "lifetime",
         lessonsCount: 26,
@@ -442,7 +448,7 @@ As you progress through the course, you'll ascend to higher levels of expertise,
         rating: 4.7,
         reviewsCount: 165,
         studentsCount: 2450,
-        level: "Beginner",
+        level: COURSE_LEVELS[0],
         price: 25,
         billingPeriod: "lifetime",
         lessonsCount: 20,
@@ -494,6 +500,34 @@ export const TESTIMONIALS: Testimonial[] = [
         content: "As a creator, ByteSpace has been a game-changer for me. The Course Editor is user-friendly, and the support from the community is incredible. It's fulfilling to see my courses making a positive impact on learners globally.",
     },
 ];
+
+
+
+export const SORT_OPTIONS = [
+    { label: "Most relevant", value: "relevant" },
+    { label: "Most popular", value: "popular" },
+    { label: "Highest rated", value: "rating" },
+    { label: "Newest", value: "newest" },
+    { label: "Price: Low to High", value: "price_asc" },
+    { label: "Price: High to Low", value: "price_desc" },
+];
+
+export interface FilterTabItem {
+    key: "level" | "category";
+    label: string;
+}
+
+export const FILTER_TABS: FilterTabItem[] = [
+    {
+        key: "level",
+        label: "Level",
+    },
+    {
+        key: "category",
+        label: "Category",
+    },
+];
+
 
 // -------------------------------------------------------------
 // Helper functions

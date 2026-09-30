@@ -13,6 +13,9 @@ export const metadata: Metadata = {
 };
 
 const Home = () => {
+
+
+
   return (
     <>
       {/* hero */}

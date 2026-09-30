@@ -1,13 +1,35 @@
-
 import type { Metadata } from "next";
+import UnderDevelopment from "@/components/common/under-development";
+import { getCourseBySlug } from "@/data/courses";
 
-export const metadata: Metadata = {
-  title: "Course Details | Bytespace",
-  description: "View comprehensive course details, syllabus, and enrollment options on Bytespace.",
-};
+interface CourseDetailPageProps {
+  params: Promise<{ slug: string }>;
+}
 
-const CourseDetail = () => {
-  return <div>CourseDetail</div>;
+export async function generateMetadata({ params }: CourseDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const course = getCourseBySlug(slug);
+
+  return {
+    title: course ? `${course.title} | Bytespace` : "Course Details | Bytespace",
+    description: course?.subtitle || "View comprehensive course details, syllabus, and enrollment options on Bytespace.",
+  };
+}
+
+const CourseDetail = async ({ params }: CourseDetailPageProps) => {
+  const { slug } = await params;
+  const course = getCourseBySlug(slug);
+
+  return (
+    <UnderDevelopment
+      title={course ? course.title : "Course Details Page"}
+      subtitle={course ? `Course ID: #${course.id} • ${course.category.name}` : undefined}
+      description="We are currently building this comprehensive course experience, including video lessons, curriculum modules, and interactive student discussions."
+      badge="Under Development"
+      primaryActionHref="/courses"
+      primaryActionLabel="Explore Other Courses"
+    />
+  );
 };
 
 export default CourseDetail;

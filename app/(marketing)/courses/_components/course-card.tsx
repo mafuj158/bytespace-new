@@ -86,7 +86,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
                         <rect x="10" y="9" width="3.5" height="12" rx="1" />
                         <rect x="17" y="4" width="3.5" height="17" rx="1" />
                     </svg>
-                    <span>{course.level}</span>
+                    <span>{course.level.name}</span>
                 </div>
 
                 {/* Avatars + Count badge */}
