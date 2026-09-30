@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import CommonFieldset from "@/components/ui/fieldset";
 import bg from "@/public/hero_frame.png";
 import Image from "next/image";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { FaSearch } from "react-icons/fa";
+import { FiX } from "react-icons/fi";
 
 interface CoursesHeroSearchProps {
     searchQuery: string;
@@ -17,29 +19,34 @@ type TFormInputs = {
 
 const CoursesHeroSearch = ({ searchQuery, setSearchQuery }: CoursesHeroSearchProps) => {
 
-
     // hooks
     const {
         control,
         handleSubmit,
         formState: { errors },
         watch,
-        reset
+        setValue,
     } = useForm<TFormInputs>({
         defaultValues: {
             search: searchQuery || ""
         }
     });
-    const [search] = watch(["search"]);
-    //  const isFormIncomplete = !search?.trim();
 
+    const search = watch("search");
+
+    // Sync input with external searchQuery changes
+    useEffect(() => {
+        setValue("search", searchQuery || "");
+    }, [searchQuery, setValue]);
 
     const onSubmit = (data: TFormInputs) => {
-        setSearchQuery(data.search)
-        reset();
-    }
+        setSearchQuery(data.search);
+    };
 
-
+    const handleClear = () => {
+        setValue("search", "");
+        setSearchQuery("");
+    };
 
     return (
         <div className="w-full min-h-72 sm:min-h-80 md:h-96 pt-16 sm:pt-36 md:pt-48 pb-6 sm:pb-14 md:pb-16 flex flex-col items-center justify-center sm:justify-end relative overflow-hidden">
@@ -67,8 +74,20 @@ const CoursesHeroSearch = ({ searchQuery, setSearchQuery }: CoursesHeroSearchPro
                             register_as="search"
                             placeholder="Search"
                             errors={errors}
-                            innerWrapper="rounded-full py-3 sm:py-3.5! !px-5 sm:!px-6"
+                            innerWrapper="rounded-full py-2.5 sm:py-3! !px-5 sm:!px-6 h-11 sm:h-12.5 flex items-center"
                             icon={<FaSearch className="text-sm text-[#82868E]" />}
+                            endIcon={
+                                search && search.length > 0 ? (
+                                    <button
+                                        type="button"
+                                        onClick={handleClear}
+                                        aria-label="Clear search"
+                                        className="size-4.5 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-400 hover:text-gray-700 flex items-center justify-center transition-all cursor-pointer active:scale-90 p-0 leading-none shrink-0"
+                                    >
+                                        <FiX className="size-2.5 sm:size-3" />
+                                    </button>
+                                ) : null
+                            }
                         />
                     </div>
                     <Button
