@@ -111,3 +111,162 @@ body {
     padding-inline: 1rem;
   }
 }
+
+/* -------------------------------------------------------------
+   Ant Design Custom Pagination for ByteSpace
+   ------------------------------------------------------------- */
+.bytespace-pagination.ant-pagination {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.375rem !important;
+  flex-wrap: wrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+@media (min-width: 640px) {
+  .bytespace-pagination.ant-pagination {
+    gap: 0.5rem !important;
+  }
+}
+
+.bytespace-pagination .ant-pagination-item {
+  min-width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  border-radius: 9999px !important;
+  border: 1px solid transparent !important;
+  background: transparent !important;
+  margin: 0 !important;
+  font-family: inherit !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+@media (min-width: 640px) {
+  .bytespace-pagination .ant-pagination-item {
+    min-width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+  }
+}
+
+.bytespace-pagination .ant-pagination-item a {
+  color: #475467 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.bytespace-pagination .ant-pagination-item:hover:not(.ant-pagination-item-active) {
+  background: #F2F4F7 !important;
+}
+
+.bytespace-pagination .ant-pagination-item:hover:not(.ant-pagination-item-active) a {
+  color: #101828 !important;
+}
+
+.bytespace-pagination .ant-pagination-item-active {
+  background: #D4FB20 !important;
+  border-color: transparent !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+.bytespace-pagination .ant-pagination-item-active a {
+  color: #040819 !important;
+  font-weight: 700 !important;
+}
+
+.bytespace-pagination .ant-pagination-item-active:hover {
+  background: #cbf517 !important;
+}
+
+.bytespace-pagination .ant-pagination-prev,
+.bytespace-pagination .ant-pagination-next {
+  min-width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  border-radius: 9999px !important;
+  border: 1px solid #CED0D3 !important;
+  background: #ffffff !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #344054 !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+}
+
+@media (min-width: 640px) {
+  .bytespace-pagination .ant-pagination-prev,
+  .bytespace-pagination .ant-pagination-next {
+    min-width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+  }
+}
+
+.bytespace-pagination .ant-pagination-prev:hover:not(.ant-pagination-disabled),
+.bytespace-pagination .ant-pagination-next:hover:not(.ant-pagination-disabled) {
+  border-color: #98A2B3 !important;
+  background: #F9FAFB !important;
+  color: #101828 !important;
+}
+
+.bytespace-pagination .ant-pagination-prev.ant-pagination-disabled,
+.bytespace-pagination .ant-pagination-next.ant-pagination-disabled {
+  opacity: 0.3 !important;
+  border-color: #E4E7EC !important;
+  background: #ffffff !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}
+
+.bytespace-pagination .ant-pagination-prev button,
+.bytespace-pagination .ant-pagination-next button,
+.bytespace-pagination .ant-pagination-prev a,
+.bytespace-pagination .ant-pagination-next a {
+  border: none !important;
+  background: transparent !important;
+  color: inherit !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  cursor: inherit !important;
+  padding: 0 !important;
+}
+
+.bytespace-pagination .ant-pagination-jump-prev,
+.bytespace-pagination .ant-pagination-jump-next {
+  min-width: 36px !important;
+  height: 36px !important;
+  border-radius: 9999px !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  background: transparent !important;
+  color: #98A2B3 !important;
+}
+
+@media (min-width: 640px) {
+  .bytespace-pagination .ant-pagination-jump-prev,
+  .bytespace-pagination .ant-pagination-jump-next {
+    min-width: 40px !important;
+    height: 40px !important;
+  }
+}
+
