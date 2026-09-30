@@ -10,7 +10,7 @@
 
 ## 🌐 Live Preview & Repository Links
 
-- **Live Deployment (Vercel):** [https://bytespace-new.vercel.app](https://bytespace-new.vercel.app) *(Replace with your live Vercel URL)*
+- **Live Deployment (Vercel):** [https://bytespace-new-nine-peach.vercel.app](https://bytespace-new-nine-peach.vercel.app)
 - **GitHub Repository:** [https://github.com/mafuj158/bytespace-new](https://github.com/mafuj158/bytespace-new)
 - **Active Feature Branch:** `feature/courses-page-design`
 - **Pull Request (PR):** Submitted for review from `feature/courses-page-design` to `main`
