@@ -12,7 +12,11 @@ export const metadata: Metadata = {
   description: "Build, launch, and grow your online courses in minutes with Bytespace.",
 };
 
-const Home = () => {
+const Home = async () => {
+
+ await new Promise((resolve) => setTimeout(resolve, 10000));
+
+
   return (
     <>
       {/* hero */}
