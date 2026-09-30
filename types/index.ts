@@ -7,6 +7,7 @@ export interface Creator {
     bio: string;
     productsCount: number;
     followersCount: number;
+    studentsCount?: number;
 }
 
 export interface Review {

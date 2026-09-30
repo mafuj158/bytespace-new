@@ -3,6 +3,8 @@
 import { CourseFilterParams } from "@/types";
 import { useMemo, useState } from "react";
 import { COURSES } from "@/data/courses";
+import { cn } from "@/lib/utils";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import CoursesHeroSearch from "./courses-hero-search";
 import CoursesFilterBar from "./courses-filter-bar";
 import CourseCard from "./course-card";
@@ -77,6 +79,14 @@ const CoursesView = ({ initialFilters }: CoursesViewProps) => {
         return result;
     }, [filters]);
 
+    // Pagination calculations
+    const limit = filters.limit || 6;
+    const totalPages = Math.ceil(filteredCourses.length / limit);
+    const paginatedCourses = useMemo(() => {
+        const start = (filters.page - 1) * limit;
+        return filteredCourses.slice(start, start + limit);
+    }, [filteredCourses, filters.page, limit]);
+
     return (
         <div className="w-full">
             {/* courses hero and search section */}
@@ -87,8 +97,8 @@ const CoursesView = ({ initialFilters }: CoursesViewProps) => {
                 <CoursesFilterBar filters={filters} setFilters={setFilters} />
                 {/* course grid */}
                 <div className="w-full grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5 md:gap-6 lg:gap-8 ">
-                    {filteredCourses.length > 0 ? (
-                        filteredCourses.map((course) => (
+                    {paginatedCourses.length > 0 ? (
+                        paginatedCourses.map((course) => (
                             <CourseCard key={course.id} course={course} />
                         ))
                     ) : (
@@ -99,6 +109,45 @@ const CoursesView = ({ initialFilters }: CoursesViewProps) => {
                     )}
                 </div>
                 {/* pagination */}
+                {totalPages > 1 && (
+                    <div className="w-full flex items-center justify-center gap-1.5 sm:gap-2.5 pt-4 sm:pt-6">
+                        <button
+                            type="button"
+                            onClick={() => setFilters((prev) => ({ ...prev, page: Math.max(1, prev.page - 1) }))}
+                            disabled={filters.page <= 1}
+                            aria-label="Previous Page"
+                            className="size-8 sm:size-10 rounded-full border border-[#CED0D3] bg-white text-[#344054] flex items-center justify-center transition-all cursor-pointer hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed shadow-xs"
+                        >
+                            <FiChevronLeft className="size-4 sm:size-4.5" />
+                        </button>
+
+                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                            <button
+                                key={pageNum}
+                                type="button"
+                                onClick={() => setFilters((prev) => ({ ...prev, page: pageNum }))}
+                                className={cn(
+                                    "size-8 sm:size-10 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center justify-center",
+                                    filters.page === pageNum
+                                        ? "bg-lime text-black shadow-xs font-bold"
+                                        : "text-[#475467] hover:bg-gray-100"
+                                )}
+                            >
+                                {pageNum}
+                            </button>
+                        ))}
+
+                        <button
+                            type="button"
+                            onClick={() => setFilters((prev) => ({ ...prev, page: Math.min(totalPages, prev.page + 1) }))}
+                            disabled={filters.page >= totalPages}
+                            aria-label="Next Page"
+                            className="size-8 sm:size-10 rounded-full border border-[#CED0D3] bg-white text-[#344054] flex items-center justify-center transition-all cursor-pointer hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed shadow-xs"
+                        >
+                            <FiChevronRight className="size-4 sm:size-4.5" />
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     )
