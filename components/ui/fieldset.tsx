@@ -49,6 +49,7 @@ interface CommonFieldsetProps<T extends FieldValues> {
   control: UseControllerProps<T>["control"];
   selectMode?: SelectMode;
   icon?: React.ReactNode;
+  endIcon?: React.ReactNode;
   disabled?: boolean;
   isRequired?: boolean;
   is_required?: boolean;
@@ -76,6 +77,7 @@ const CommonFieldset = <T extends FieldValues>({
   control,
   selectMode = "single",
   icon,
+  endIcon,
   disabled = false,
   isRequired = false,
   is_required = false,
@@ -126,7 +128,7 @@ const CommonFieldset = <T extends FieldValues>({
 
       <div
         className={cn(
-          "w-full min-w-0 max-w-full flex items-center gap-2 px-3 sm:px-3.5 lg:px-4 py-2 sm:py-2.5 lg:py-3 rounded-xl bg-white text-black border transition-all duration-200",
+          "w-full min-w-0 max-w-full flex items-center gap-2.5 px-3.5 sm:px-4 lg:px-4.5 py-3 sm:py-3.5 min-h-[46px] sm:min-h-[50px] rounded-xl bg-white text-black border transition-all duration-200",
           errorMessage
             ? "border-red-500 focus-within:border-red-500 focus-within:ring-1 focus-within:ring-red-500"
             : "border-[#DFE1E7] focus-within:border-primary focus-within:ring-1 focus-within:ring-primary",
@@ -287,13 +289,16 @@ const CommonFieldset = <T extends FieldValues>({
                 max={type === "number" ? max : undefined}
                 aria-label={label}
                 className={cn(
-                  "w-full border-none placeholder:text-gray-300 placeholder:text-xs sm:placeholder:text-sm text-xs sm:text-sm outline-none bg-transparent",
+                  "w-full border-none placeholder:text-gray-400 placeholder:text-sm text-sm sm:text-base outline-none bg-transparent leading-normal",
                   inputClass
                 )}
               />
             )}
           />
         )}
+
+        {/* END ICON */}
+        {endIcon && <div className="shrink-0 flex items-center justify-center leading-none">{endIcon}</div>}
 
         {/* PASSWORD TOGGLE */}
         {type === "password" && (
