@@ -26,7 +26,7 @@ const Courses = async ({ searchParams }: CoursesPageProps) => {
     price: resolvedParams.price || "all",
     sort: resolvedParams.sort || "relevant",
     page: Number(resolvedParams.page) || 1,
-    limit: Number(resolvedParams.limit) || 8,
+    limit: Number(resolvedParams.limit) || 9,
   };
 
   return (

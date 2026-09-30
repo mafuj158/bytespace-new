@@ -20,10 +20,22 @@ export interface Review {
     date: string;
 }
 
+export interface RatingDistribution {
+    5: number;
+    4: number;
+    3: number;
+    2: number;
+    1: number;
+}
+
 export interface ModuleLesson {
     id: string;
     title: string;
     duration: string;
+    type?: "video" | "article" | "quiz";
+    isPreview?: boolean;
+    isCompleted?: boolean;
+    videoUrl?: string;
 }
 
 export interface CourseModule {
@@ -32,6 +44,7 @@ export interface CourseModule {
     title: string;
     description: string;
     duration?: string;
+    lessonsCount?: number;
     lessons?: ModuleLesson[];
 }
 
@@ -54,12 +67,22 @@ export interface Course {
     thumbnail: string;
     isFeatured?: boolean;
     studentAvatars: string[];
+    // Extended Course Details from Figma
+    videoThumbnail?: string;
+    videoUrl?: string;
+    sectionsCount?: number;
     description?: string;
     keyPoints?: string[];
     sneakPeekImages?: string[];
     modules?: CourseModule[];
     reviews?: Review[];
     includes?: string[];
+    ratingDistribution?: RatingDistribution;
+    language?: string;
+    lastUpdated?: string;
+    certificate?: boolean;
+    requirements?: string[];
+    targetAudience?: string[];
 }
 
 export interface Category {
