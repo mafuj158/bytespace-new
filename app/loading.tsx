@@ -1,7 +1,7 @@
 import Image from "next/image";
 import logo from "@/public/logo.png";
 import bgBlueFrame from "@/public/hero_frame.png";
-import React from "react";
+
 
 export default function RootLoading() {
   return (

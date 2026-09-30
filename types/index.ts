@@ -44,7 +44,7 @@ export interface Course {
     rating: number;
     reviewsCount: number;
     studentsCount: number;
-    level: "Beginner" | "Intermediate" | "Advanced";
+    level: CourseLevel;
     price: number;
     billingPeriod: string;
     lessonsCount: number;
@@ -67,6 +67,11 @@ export interface Category {
     slug: string;
     icon?: string;
 }
+export interface CourseLevel {
+    id: string;
+    name: string;
+    slug: string;
+}
 
 export interface LearningPath {
     id: string;
@@ -81,4 +86,15 @@ export interface Testimonial {
     role: string;
     avatar: string;
     content: string;
+}
+
+
+export interface CourseFilterParams {
+    search: string;
+    category: string;
+    level: string;
+    price: string;
+    sort: string;
+    page: number;
+    limit: number;
 }

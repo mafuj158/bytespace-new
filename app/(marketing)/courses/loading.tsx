@@ -1,5 +1,4 @@
 import CourseCardSkeleton from "@/components/skeletons/course-card-skeleton";
-import React from "react";
 
 export default function CoursesLoading() {
   return (
