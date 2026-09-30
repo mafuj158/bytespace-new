@@ -93,11 +93,11 @@ const CoursesFilterBar = ({ filters, setFilters }: CoursesFilterBarProps) => {
     const hasOverflow = canScrollLeft || canScrollRight;
 
     return (
-        <div className="w-full flex flex-col gap-6">
+        <div className="w-full flex flex-col gap-4 sm:gap-5 md:gap-6">
             {/* Top row: Filter buttons & Sort dropdown */}
-            <div className="w-full flex items-center justify-between">
+            <div className="w-full flex items-center justify-between gap-2.5 sm:gap-4">
                 {/* Left side: Level & Category toggle pills */}
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 sm:gap-3">
                     {FILTER_TABS.map(({ key, label }) => {
                         return (
                             <button
@@ -105,14 +105,14 @@ const CoursesFilterBar = ({ filters, setFilters }: CoursesFilterBarProps) => {
                                 type="button"
                                 onClick={() => setShow(key)}
                                 className={cn(
-                                    "h-10 px-4.5 rounded-full border text-sm font-medium flex items-center gap-2 transition-all cursor-pointer",
+                                    "h-9 sm:h-10 px-3.5 sm:px-4.5 rounded-full border text-xs sm:text-sm font-medium flex items-center gap-1.5 sm:gap-2 transition-all cursor-pointer",
                                     show === key
                                         ? "border-[#040819] text-[#040819] bg-[#F8FAFC] shadow-xs font-semibold"
                                         : "border-[#CED0D3] text-[#475467] bg-white hover:border-[#98A2B3] hover:text-[#101828]"
                                 )}
                             >
                                 {
-                                    key === "category" ? <BiCategory className="size-4.5 text-current" /> : <BiBarChartAlt2 className="size-4.5 text-current" />
+                                    key === "category" ? <BiCategory className="size-4 sm:size-4.5 text-current" /> : <BiBarChartAlt2 className="size-4 sm:size-4.5 text-current" />
                                 }
                                 <span>{label}</span>
                             </button>
@@ -125,24 +125,24 @@ const CoursesFilterBar = ({ filters, setFilters }: CoursesFilterBarProps) => {
                     <button
                         type="button"
                         onClick={() => setIsSortOpen((prev) => !prev)}
-                        className="h-10 px-4.5 rounded-full border border-[#CED0D3] bg-white text-[#344054] text-sm font-medium flex items-center gap-2 hover:border-[#98A2B3] transition-all cursor-pointer"
+                        className="h-9 sm:h-10 px-3 sm:px-4.5 rounded-full border border-[#CED0D3] bg-white text-[#344054] text-xs sm:text-sm font-medium flex items-center gap-1.5 sm:gap-2 hover:border-[#98A2B3] transition-all cursor-pointer shrink-0"
                     >
-                        <BiMenuAltRight className="size-5 text-current" />
-                        <span>
+                        <BiMenuAltRight className="size-4.5 sm:size-5 text-current shrink-0" />
+                        <span className="line-clamp-1">
                             {SORT_OPTIONS.find((opt) => opt.value === activeSort)?.label || "Most relevant"}
                         </span>
                     </button>
 
                     {/* Sort Dropdown Menu */}
                     {isSortOpen && (
-                        <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-gray-100 py-1.5 z-30 animate-in fade-in zoom-in-95 duration-150">
+                        <div className="absolute right-0 mt-2 w-44 sm:w-48 bg-white rounded-xl shadow-lg border border-gray-100 py-1.5 z-30 animate-in fade-in zoom-in-95 duration-150">
                             {SORT_OPTIONS.map((option) => (
                                 <button
                                     key={option.value}
                                     type="button"
                                     onClick={() => handleSortSelect(option.value)}
                                     className={cn(
-                                        "w-full text-left px-4 py-2 text-sm transition-colors cursor-pointer",
+                                        "w-full text-left px-3.5 sm:px-4 py-2 text-xs sm:text-sm transition-colors cursor-pointer",
                                         activeSort === option.value
                                             ? "bg-[#F8FAFC] text-black font-semibold"
                                             : "text-[#475467] hover:bg-[#F1F3F5] hover:text-[#101828]"
@@ -157,7 +157,7 @@ const CoursesFilterBar = ({ filters, setFilters }: CoursesFilterBarProps) => {
             </div>
 
             {/* Bottom row: Filter values with Left & Right Scroll Buttons */}
-            <div className="relative w-full flex items-center gap-2">
+            <div className="relative w-full flex items-center gap-1.5 sm:gap-2">
                 {/* Left Arrow Button */}
                 {hasOverflow && (
                     <button
@@ -166,20 +166,20 @@ const CoursesFilterBar = ({ filters, setFilters }: CoursesFilterBarProps) => {
                         disabled={!canScrollLeft}
                         aria-label="Scroll left"
                         className={cn(
-                            "shrink-0 size-9 rounded-full border border-[#CED0D3] bg-white text-[#344054] flex items-center justify-center transition-all shadow-xs",
+                            "shrink-0 size-8 sm:size-9 rounded-full border border-[#CED0D3] bg-white text-[#344054] flex items-center justify-center transition-all shadow-xs",
                             canScrollLeft
                                 ? "hover:bg-[#F8FAFC] hover:text-black hover:border-[#98A2B3] cursor-pointer active:scale-95 opacity-100"
                                 : "opacity-30 cursor-not-allowed border-gray-200"
                         )}
                     >
-                        <FiChevronLeft className="size-4.5" />
+                        <FiChevronLeft className="size-4 sm:size-4.5" />
                     </button>
                 )}
 
                 {/* Scrollable Track */}
                 <div
                     ref={scrollContainerRef}
-                    className="w-full flex items-center gap-2.5 sm:gap-3 overflow-x-auto scroll-smooth py-1 [&::-webkit-scrollbar]:hidden"
+                    className="w-full flex items-center gap-2 sm:gap-2.5 md:gap-3 overflow-x-auto scroll-smooth py-1 [&::-webkit-scrollbar]:hidden"
                     style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
                 >
                     {show === "category" ? (
@@ -187,6 +187,7 @@ const CoursesFilterBar = ({ filters, setFilters }: CoursesFilterBarProps) => {
                         displayCategories.map((cat) => {
                             const isSelected =
                                 activeCategory.toLowerCase() === cat.name.toLowerCase() ||
+                                activeCategory.toLowerCase() === cat.slug.toLowerCase() ||
                                 (cat.name === "Featured" && activeCategory === "all");
 
                             return (
@@ -195,7 +196,7 @@ const CoursesFilterBar = ({ filters, setFilters }: CoursesFilterBarProps) => {
                                     type="button"
                                     onClick={() => handleCategoryClick(cat.name)}
                                     className={cn(
-                                        "shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer select-none",
+                                        "shrink-0 whitespace-nowrap px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer select-none",
                                         isSelected
                                             ? "bg-lime text-black font-semibold shadow-xs hover:bg-lime/90"
                                             : "bg-[#F1F3F5] text-[#475467] hover:bg-[#E5E7EB] hover:text-[#101828]"
@@ -212,7 +213,7 @@ const CoursesFilterBar = ({ filters, setFilters }: CoursesFilterBarProps) => {
                                 type="button"
                                 onClick={() => handleLevelClick("all")}
                                 className={cn(
-                                    "shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer select-none",
+                                    "shrink-0 whitespace-nowrap px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer select-none",
                                     activeLevel === "all"
                                         ? "bg-lime text-black font-semibold shadow-xs hover:bg-lime/90"
                                         : "bg-[#F1F3F5] text-[#475467] hover:bg-[#E5E7EB] hover:text-[#101828]"
@@ -231,7 +232,7 @@ const CoursesFilterBar = ({ filters, setFilters }: CoursesFilterBarProps) => {
                                         type="button"
                                         onClick={() => handleLevelClick(level.slug)}
                                         className={cn(
-                                            "shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer select-none",
+                                            "shrink-0 whitespace-nowrap px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer select-none",
                                             isSelected
                                                 ? "bg-lime text-black font-semibold shadow-xs hover:bg-lime/90"
                                                 : "bg-[#F1F3F5] text-[#475467] hover:bg-[#E5E7EB] hover:text-[#101828]"
@@ -253,13 +254,13 @@ const CoursesFilterBar = ({ filters, setFilters }: CoursesFilterBarProps) => {
                         disabled={!canScrollRight}
                         aria-label="Scroll right"
                         className={cn(
-                            "shrink-0 size-9 rounded-full border border-[#CED0D3] bg-white text-[#344054] flex items-center justify-center transition-all shadow-xs",
+                            "shrink-0 size-8 sm:size-9 rounded-full border border-[#CED0D3] bg-white text-[#344054] flex items-center justify-center transition-all shadow-xs",
                             canScrollRight
                                 ? "hover:bg-[#F8FAFC] hover:text-black hover:border-[#98A2B3] cursor-pointer active:scale-95 opacity-100"
                                 : "opacity-30 cursor-not-allowed border-gray-200"
                         )}
                     >
-                        <FiChevronRight className="size-4.5" />
+                        <FiChevronRight className="size-4 sm:size-4.5" />
                     </button>
                 )}
             </div>
