@@ -81,7 +81,6 @@ const CoursesView = ({ initialFilters }: CoursesViewProps) => {
     // Pagination calculations
     const limit = filters.limit || 6;
     const totalPages = Math.ceil(filteredCourses.length / limit);
-    console.log(totalPages);
     const paginatedCourses = useMemo(() => {
         const start = (filters.page - 1) * limit;
         return filteredCourses.slice(start, start + limit);
