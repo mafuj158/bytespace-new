@@ -1,6 +1,7 @@
 # 🚀 ByteSpace - Modern Digital Learning & Creator Platform
 
 > **Frontend Engineering Assessment Submission**  
+> **Company:** [Doin Tech](https://doin.tech/)  
 > **Candidate:** Mafuj Ahmed Bishal  
 > **Position Applied:** Jr. Software Engineer (Frontend)  
 > **Tracking ID:** `aaaaffad-cc3f-4f19-a588-e1f02dd2786d`
@@ -156,4 +157,4 @@ In strict accordance with the assessment instructions:
 
 ---
 
-*Developed with passion by **Mafuj Ahmed Bishal** for Doin Tech Limited.*
+*Developed with passion by **Mafuj Ahmed Bishal** for [Doin Tech](https://doin.tech/).*
