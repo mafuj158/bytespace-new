@@ -17,19 +17,40 @@ const DEFAULT_AVATARS = [
     "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80",
 ];
 
+const shimmer = (w: number, h: number) => `
+<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="g">
+      <stop stop-color="#f3f4f6" offset="20%" />
+      <stop stop-color="#e5e7eb" offset="50%" />
+      <stop stop-color="#f3f4f6" offset="70%" />
+    </linearGradient>
+  </defs>
+  <rect width="${w}" height="${h}" fill="#f3f4f6" />
+  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+</svg>`;
+
+const toBase64 = (str: string) =>
+    typeof window === "undefined"
+        ? Buffer.from(str).toString("base64")
+        : window.btoa(str);
+
 const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
     const avatars = course.studentAvatars?.length > 0 ? course.studentAvatars.slice(0, 4) : DEFAULT_AVATARS;
 
     return (
         <div className="group w-full p-2.5 sm:p-3.5 md:p-4 flex flex-col gap-2.5 sm:gap-3.5 md:gap-4 bg-white border border-[#CED0D3] rounded-2xl sm:rounded-3xl hover:border-lime hover:shadow-lg transition-all duration-300">
             {/* Image and floating badge counters */}
-            <div className="w-full rounded-xl sm:rounded-2xl md:rounded-3xl h-36 xs:h-40 sm:h-44 md:h-52 overflow-hidden relative">
+            <div className="w-full rounded-xl sm:rounded-2xl md:rounded-3xl h-36 xs:h-40 sm:h-44 md:h-52 overflow-hidden relative bg-gray-100">
                 <Image
                     src={course.thumbnail}
                     alt={course.title}
                     fill
+                    placeholder="blur"
+                    blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
 
                 {/* Glassmorphism badges at bottom of thumbnail */}
