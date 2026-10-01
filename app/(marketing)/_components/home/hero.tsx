@@ -35,8 +35,10 @@ const Hero = () => {
                     src={bgBlueFrame}
                     alt="Hero Background"
                     fill
-                    className="object-cover"
+                    sizes="100vw"
                     priority
+                    placeholder="blur"
+                    className="object-cover"
                 />
             </div>
             {/* bottom circle */}
@@ -46,6 +48,9 @@ const Hero = () => {
                     alt="lime-circle"
                     width={1160}
                     height={1160}
+                    priority
+                    placeholder="blur"
+                    sizes="(max-width: 640px) 680px, (max-width: 1024px) 1040px, 1160px"
                     className="object-cover"
                 />
             </div>
@@ -56,6 +61,9 @@ const Hero = () => {
                     alt="hero-character"
                     width={500}
                     height={500}
+                    priority
+                    placeholder="blur"
+                    sizes="(max-width: 640px) 340px, (max-width: 768px) 420px, (max-width: 1024px) 480px, 550px"
                     className="w-full h-full object-cover"
                 />
             </div>
@@ -105,6 +113,8 @@ const Hero = () => {
                     alt="lime-spring"
                     width={375}
                     height={380}
+                    placeholder="blur"
+                    sizes="(max-width: 640px) 80px, (max-width: 1024px) 176px, 384px"
                     className="w-full h-full object-contain"
                 />
             </motion.div>
@@ -119,6 +129,8 @@ const Hero = () => {
                     alt="lime-spring"
                     width={167}
                     height={167}
+                    placeholder="blur"
+                    sizes="(max-width: 640px) 48px, (max-width: 1024px) 112px, 176px"
                     className="w-full h-full object-contain"
                 />
             </motion.div>
@@ -133,6 +145,8 @@ const Hero = () => {
                     alt="lime-spring"
                     width={375}
                     height={375}
+                    placeholder="blur"
+                    sizes="(max-width: 640px) 80px, (max-width: 1024px) 176px, 384px"
                     className="w-full h-full object-contain"
                 />
             </motion.div>
@@ -147,6 +161,8 @@ const Hero = () => {
                     alt="lime-spring"
                     width={375}
                     height={375}
+                    placeholder="blur"
+                    sizes="(max-width: 640px) 80px, (max-width: 1024px) 176px, 384px"
                     className="w-full h-full object-contain"
                 />
             </motion.div>
@@ -161,6 +177,8 @@ const Hero = () => {
                     alt="lime-spring"
                     width={167}
                     height={167}
+                    placeholder="blur"
+                    sizes="(max-width: 640px) 48px, (max-width: 1024px) 112px, 176px"
                     className="w-full h-full object-contain"
                 />
             </motion.div>
@@ -175,6 +193,8 @@ const Hero = () => {
                     alt="lime-spring"
                     width={375}
                     height={375}
+                    placeholder="blur"
+                    sizes="(max-width: 640px) 80px, (max-width: 1024px) 176px, 384px"
                     className="w-full h-full object-contain"
                 />
             </motion.div>
