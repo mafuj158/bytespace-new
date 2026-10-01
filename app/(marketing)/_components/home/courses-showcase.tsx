@@ -14,14 +14,14 @@ const CoursesShowcase = () => {
 
     // Filter courses based on active category
     const filteredCourses = useMemo(() => {
-        if (activeCategory.slug === "featured" || activeCategory.id === "1") {
-            return COURSES.filter((course) => course.isFeatured)
+        if (activeCategory.slug === "all" || activeCategory.id === "1") {
+            return COURSES.slice(0, 6)
         }
         return COURSES.filter(
             (course) =>
                 course.category.id === activeCategory.id ||
                 course.category.slug === activeCategory.slug
-        )
+        ).slice(0, 6)
     }, [activeCategory])
 
     const displayedCategories = showAllCategories
@@ -95,7 +95,7 @@ const CoursesShowcase = () => {
                             onClick={() => setActiveCategory(COURSE_CATEGORIES[0])}
                             className="mt-4 px-5 py-2 text-xs sm:text-sm bg-lime text-black font-semibold rounded-full cursor-pointer hover:opacity-90 transition active:scale-95 shadow-xs"
                         >
-                            View Featured Courses
+                            View All Courses
                         </button>
                     </div>
                 )}

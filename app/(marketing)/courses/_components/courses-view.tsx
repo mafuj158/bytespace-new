@@ -7,6 +7,7 @@ import CustomPagination from "@/components/ui/custom-pagination";
 import CoursesHeroSearch from "./courses-hero-search";
 import CoursesFilterBar from "./courses-filter-bar";
 import CourseCard from "./course-card";
+import { FiRotateCcw } from "react-icons/fi";
 
 interface CoursesViewProps {
     initialFilters: CourseFilterParams;
@@ -44,15 +45,11 @@ const CoursesView = ({ initialFilters }: CoursesViewProps) => {
 
         // 2. Category Filter
         if (filters.category && filters.category !== "all") {
-            if (filters.category.toLowerCase() === "featured") {
-                result = result.filter((course) => course.isFeatured);
-            } else {
-                result = result.filter(
-                    (course) =>
-                        course.category.name.toLowerCase() === filters.category.toLowerCase() ||
-                        course.category.slug.toLowerCase() === filters.category.toLowerCase()
-                );
-            }
+            result = result.filter(
+                (course) =>
+                    course.category.name.toLowerCase() === filters.category.toLowerCase() ||
+                    course.category.slug.toLowerCase() === filters.category.toLowerCase()
+            );
         }
 
         // 3. Level Filter
@@ -104,6 +101,23 @@ const CoursesView = ({ initialFilters }: CoursesViewProps) => {
                         <div className="col-span-full py-16 flex flex-col items-center justify-center text-center">
                             <p className="text-xl font-semibold text-[#040819]">No courses found</p>
                             <p className="text-sm text-[#82868E] mt-1">Try adjusting your search or filter options</p>
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    setFilters((prev) => ({
+                                        ...prev,
+                                        search: "",
+                                        category: "all",
+                                        level: "all",
+                                        sort: "relevant",
+                                        page: 1,
+                                    }))
+                                }
+                                className="mt-4 px-5 py-2.5 rounded-full bg-lime text-black font-semibold text-xs sm:text-sm hover:bg-lime/90 transition-all cursor-pointer shadow-xs active:scale-95 flex items-center gap-2"
+                            >
+                                <FiRotateCcw className="size-3.5 sm:size-4" />
+                                <span>Reset All Filters</span>
+                            </button>
                         </div>
                     )}
                 </div>
