@@ -18,6 +18,7 @@ const Logo = ({ wrapperClassName, logoClassName, logoWrapperClass, textClassName
                     height={32}
                     src={logo}
                     alt="Logo"
+                    priority
                     className={cn("w-full h-full object-contain", logoClassName)}
                 />
             </div>
