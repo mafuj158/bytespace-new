@@ -4,7 +4,7 @@ import { Category, Course, CourseLevel, Creator, LearningPath, Testimonial } fro
 // 1. FILTER CATEGORIES (For Discover Your Passion pill tags)
 // -------------------------------------------------------------
 export const COURSE_CATEGORIES: Category[] = [
-    { id: "1", name: "Featured", slug: "featured" },
+    { id: "1", name: "All", slug: "all" },
     { id: "2", name: "Music", slug: "music" },
     { id: "3", name: "Drawing & Painting", slug: "drawing-painting" },
     { id: "4", name: "Marketing", slug: "marketing" },
